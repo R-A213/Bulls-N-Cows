@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulls and Cows</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button id="rules" data-bs-toggle="modal" data-bs-target="#RulesModal">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="rgb(95, 29, 29)" class="bi bi-question-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+      </svg>
+    </button>    
+
+   <h1>B<img id= "horns" src="horns.png" height="100">lls  N <img id="ring" src="septum (1).png" >ows</h1>
+    <h2>Press to randomize a number</H2>
+    <button type="button" id="random" class="btn">Random</button>
+    <button type="button" id="GiveUp" class="btn">Give Up</button>
+    <div class="container">
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Type here" aria-label="Type here" aria-describedby="button-addon2">
+            <button class="btn enter " type="button" id="enterBtn">Enter</button>
+        </div>
+
+        <div class="card my-3">
+          <div class="row g-0" id="header">
+            <div class="col-sm-4 col-md-4 col-lg-4 hide"><b>Tries</b></div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-4"><b>Guess</b></div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-4"><b>Result</b></div>
+          </div>
+        </div>
+    </div>
+    
+
+<div class="modal fade" id="RulesModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">About Game</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+          <p class="title">🎯<b>Objective</b><br></p>
+          <p class="content"> Guess a hidden 4-digit number (with no repeating digits) in the fewest attempts possible.</p>
+        <hr>
+          <p class="title">🔢<b>Game Rules</b></p>
+          <ol>
+            <li><b>Hidden Number:</b></li>
+               <ul>
+                <li>A random 4-digit number is generated (e.g., 4271).</li>
+                <li><strong>No digit repeats</strong> (e.g., 1123 is invalid).</li>
+               </ul><br>
+            <li><b>Player's Guess:</b></li>
+               <ul>
+                <li>You submit a 4-digit guess (e.g., 1234).</li>
+                <li><strong>No repeating digits allowed</strong> in your guess.</li>
+               </ul><br>
+            <li><b>Feedback (Bulls & Cows):</b></li>
+               <ul>
+                <li>🐂 Bull = Correct digit in the correct position.</li>
+                <li>🐄 Cow = Correct digit but in the wrong position.</li>
+               </ul>
+               <p><b>Example:</b></p>
+                  <ul>
+                   <li>Hidden Number: 4271</li>
+                   <li>Your Guess: 1234</li>
+                   <ul>
+                    <li>2 is a Bull (correct digit + position).</li>
+                    <li>1, 4 are Cows (correct digits but wrong positions).</li>
+                   </ul>
+                   <li>Feedback: 1 Bull, 2 Cows.</li>
+                  </ul><br>
+            <li><b>Winning:</b></li>
+                 <ul>
+                  <li>If your guess has 4 Bulls, you win!</li>
+                  <li>Example:</li>
+                    <ul>
+                      <li>Hidden: 4271</li>
+                      <li>Guess: 4271 → 4 Bulls (You win!).</li>
+                    </ul>
+                 </ul>
+          </ol>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn close" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+<!-- Add this BEFORE your script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js" charset="utf-8" ></script>
+</body>
+</html>

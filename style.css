@@ -1,0 +1,190 @@
+/* ==================== */
+/* BASE STYLES */
+/* ==================== */
+body {
+    text-align: center;
+    background-color: #E5D0AC;
+    overflow: hidden;
+        min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    font-family: "Fontdiner Swanky", serif;
+    color: #a52a2a;
+    font-size: 5rem;
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: rgb(95, 29, 29);
+    margin: 50px 0;
+}
+
+/* ==================== */
+/* COMPONENT STYLES */
+/* ==================== */
+
+/* Header Icons */
+#horns { height: 100px; }
+#ring { height: 90px; }
+
+/* Rules Button */
+#rules {
+    display: block;
+    position: relative;
+    float: right;
+    margin: 7px 7px 0 0;
+    background: none;
+    border: none;
+}
+
+/* Buttons */
+.btn {
+    text-align: center;
+    background-color: #FF9D23;
+    color: #FEF2BF;
+    font-size: 1.6rem;
+    border: 1px solid #C14600;
+    border-radius: 15px;
+    margin-left: 3px;
+    transition: none !important;
+    padding: 8px 15px;
+}
+
+.btn:hover {
+    color: #FEF2BF;
+    background-color: #f79111;
+    border: 1px solid #C14600;
+}
+
+.btn:active {
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: #f79111 !important;
+    color: #FEF2BF !important;
+    border: 1px solid #FEF2BF !important;
+}
+
+/* Form Elements */
+.container {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.input-group {
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-control::placeholder {
+    color: lightgray;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+    border-color: #ced4da !important;
+    outline: 0 !important;
+}
+
+.enter {
+    height: 50px;
+    font-size: 20px;
+    width: 80px;
+    border-radius: 6px;
+}
+
+
+/* ==================== */
+/* RESPONSIVE STYLES */
+/* ==================== */
+
+
+@media(max-width:768px){
+  h1{font-size:3.5rem;}
+  h2{font-size:1.7rem ;}
+  #horns{height:80px}
+  #ring{height:75px;}
+  svg{height:25px; width:25px}
+  .btn{font-size:1.5rem !important;}
+  .enter{height: 48px !important;}
+  .card{width:80% !important;
+        max-height: 50vh; }
+}
+
+
+@media(max-width:576px){
+  h1{font-size:2.5rem;}
+  h2{font-size:1.5rem ;}
+  #horns{height:50px;}
+  #ring{height:45px;}
+  svg{height:20px; width:20px}
+  .btn{font-size:1.2rem !important;}
+  .enter{height: 45px !important;}
+  .hide{display: none !important;}
+  .input-group { max-width: 100%; }
+  .card{max-width: 80% !important;
+        max-height: 50vh; 
+        overflow: auto; }
+  .modal-body{font-size:15px;}
+}
+
+@media(max-width:320px){
+  body { padding: 10px; }
+  h1{font-size:2rem;}
+  h2{font-size:1rem ;}
+  #horns{height:40px;}
+  #ring{height:35px;}
+  svg{height:16px; width:16px}
+  .btn{font-size:1rem !important;}
+  .enter{height: 40px !important;}
+  .hide{display: none !important;}
+  .card{ max-width: 80%!important;
+        max-height: 45vh; 
+        font-size: 14px;
+        overflow:auto;
+    }
+  .input-group { max-width: 100%; }
+  .modal-body{font-size:13px;}
+}
+
+
+
+/* Card */
+.card {
+    background-color: #FEF9E1;
+    width: 95%;
+    max-width: 500px;
+    height: auto;
+    max-height: 55vh;
+    max-height:400px;
+    overflow: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    scroll-behavior: smooth;
+}
+
+.col{
+    text-align: center;
+}
+                                 /* Pop Up */ 
+.modal-body{
+    text-align: left;
+}
+.content{
+    padding-left: 3px;
+}
+
+.title{
+    margin-bottom:12px;
+    font-size: 20px;
+}
+
+.close{
+    font-size: 20px;
+}
